@@ -1,23 +1,62 @@
 #!/usr/bin/env ruby
 # frozen_string_literal: true
-puts "WELCOME TO TIC_TAC_TOE \n"
-puts "enter the name player 1 \n"
-player1 = gets.chomp
-puts "enter the name player 2 \n"
-player2 = gets.chomp
-puts 'score card'
-puts "#{player1} score 0"
-puts "#{player2} score 0"
-puts 'welcome to the game board'
-puts "you can choose any position from 1 - 9 \n"
-puts '1 | 2 | 3'
-puts '4 | 5 | 6'
-puts '7 | 8 | 9'
-puts "choose your sign between o x #{player1}"
-play1 = gets.chomp
-puts "choose #{player2}"
-play2 = gets.chomp
-puts "lets get started"
-put 
 
+require_relative '../lib/settings'
+require_relative '../lib/logic'
+
+def players(sign, player)
+  state = true
+  while state
+    if player.sign_validate(sign)
+      puts "player #{sign} make the move"
+      break
+    else
+      puts 'enter the correct value'
+      sign = gets.chomp
+    end
+  end
+  sign
+end
+
+def move_check(move, player, array, var)
+  state = true
+  while state
+    p player.index_taken(move, array)
+    if player.move_validate(move) && player.index_taken(move, array)
+       
+      array[move - 1] = var
+      break
+      
+
+    else
+      puts 'enter the correct value'
+      move = gets.chomp.to_i
+    end
+  end
+end
+
+b = Settings.new
+  player = Logic.new
+  array = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+puts 'choose the player (1 is x) or (2 is o)'
+  sign = gets.chomp
+#   var = players(sign, player)
+#   puts 'enter the position in the board please choose between 1 to 9'
+#   move = gets.chomp.to_i
+
+#   move_check(move, player, array, var)
+  
+#   puts "#{b.draw_board(array)}"
+#   var = 'x'
+# p player.flip_user(var)
+sign = players(sign, player)
+i = 0
+while i < 9
+  move = gets.chomp.to_i
+  move_check(move, player, array, sign)
+  puts "#{b.draw_board(array)}"
+  sign = player.flip_user(sign)
+  puts "player #{sign} make the move"
+  i += 1
+end
 
