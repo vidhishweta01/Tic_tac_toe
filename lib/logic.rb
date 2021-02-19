@@ -1,6 +1,3 @@
-# frozen_string_literal: true
-
-# rubocop:disable Metrics/MethodLength
 # module Player contains all the methods which are checking the move and sign validation
 module Player
   @player1 = 'x'
@@ -69,4 +66,3 @@ module Player
     state
   end
 end
-# rubocop:enable Metrics/MethodLength

@@ -1,7 +1,5 @@
 #!/usr/bin/env ruby
-# frozen_string_literal: true
 
-# rubocop:disable Metrics/MethodLength
 require_relative '../lib/settings'
 require_relative '../lib/logic'
 
@@ -43,7 +41,7 @@ def continue_game
   game_flow
 end
 
-def game_flow # rubocop:disable Metrics/AbcSize
+def game_flow 
   array = [1, 2, 3, 4, 5, 6, 7, 8, 9]
   puts 'choose the player (1 is x) or (2 is o)'
   sign = gets.chomp
@@ -71,4 +69,3 @@ def game_flow # rubocop:disable Metrics/AbcSize
 end
 
 game_flow
-# rubocop:enable Metrics/MethodLength
