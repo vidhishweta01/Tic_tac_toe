@@ -1,18 +1,20 @@
 # frozen_string_literal: true
 
+# rubocop:disable Metrics/MethodLength
+# module Player contains all the methods which are checking the move and sign validation
 module Player
-  @@player1 = 'x'
-  @@player2 = 'o'
+  @player1 = 'x'
+  @player2 = 'o'
   def player_sign(sign)
     if sign == 'x'
-      @@player1
+      @player1
     else
-      @@player2
+      @player2
     end
   end
 
   def sign_validate(sign)
-    if [@@player1, @@player2].include?(sign)
+    if [@player1, @player2].include?(sign)
       true
     else
       false
@@ -66,9 +68,5 @@ module Player
     end
     state
   end
-
-  def draw
-    puts 'its a draw'
-    puts "Game Ended ! \u{1F61C}"
-  end
 end
+# rubocop:enable Metrics/MethodLength
