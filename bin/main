@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
-# frozen_string_literal: true
+
 puts "WELCOME TO TIC_TAC_TOE \n"
 puts "enter the name player 1 \n"
 player1 = gets.chomp
@@ -18,3 +18,4 @@ play1 = gets.chomp
 puts "choose #{player2}"
 play2 = gets.chomp
 puts 'lets get started'
+
