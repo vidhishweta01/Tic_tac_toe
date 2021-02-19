@@ -41,7 +41,7 @@ def continue_game
   game_flow
 end
 
-def game_flow
+def game_flow # rubocop:disable Metrics/MethodLength
   array = [1, 2, 3, 4, 5, 6, 7, 8, 9]
   puts 'choose the player (1 is x) or (2 is o)'
   sign = gets.chomp
