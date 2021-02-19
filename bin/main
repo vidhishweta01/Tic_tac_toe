@@ -45,9 +45,12 @@ def game_flow # rubocop:disable Metrics/MethodLength
   array = [1, 2, 3, 4, 5, 6, 7, 8, 9]
   puts 'choose the player (1 is x) or (2 is o)'
   sign = gets.chomp
+  puts Settings.draw_board(array).to_s
   sign = players(sign)
   i = 0
   while i < 9
+    puts "\n you can choose between 1 to 9 for move "
+    
     move = gets.chomp.to_i
     move_check(move, array, sign)
     puts Settings.draw_board(array).to_s
