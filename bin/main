@@ -50,7 +50,6 @@ def game_flow # rubocop:disable Metrics/MethodLength
   i = 0
   while i < 9
     puts "\n you can choose between 1 to 9 for move "
-    
     move = gets.chomp.to_i
     move_check(move, array, sign)
     puts Settings.draw_board(array).to_s
