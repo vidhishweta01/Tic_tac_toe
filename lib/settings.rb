@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Settings
   def draw_board(array)
     @playing_array = array

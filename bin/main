@@ -3,11 +3,12 @@
 
 require_relative '../lib/settings'
 require_relative '../lib/logic'
+include Player
 
-def players(sign, player)
+def players(sign)
   state = true
   while state
-    if player.sign_validate(sign)
+    if Player.sign_validate(sign)
       puts "player #{sign} make the move"
       break
     else
@@ -18,16 +19,12 @@ def players(sign, player)
   sign
 end
 
-def move_check(move, player, array, var)
+def move_check(move, array, var)
   state = true
   while state
-    p player.index_taken(move, array)
-    if player.move_validate(move) && player.index_taken(move, array)
-       
+    if Player.move_validate(move) && Player.index_taken(move - 1, array)
       array[move - 1] = var
       break
-      
-
     else
       puts 'enter the correct value'
       move = gets.chomp.to_i
@@ -36,27 +33,24 @@ def move_check(move, player, array, var)
 end
 
 b = Settings.new
-  player = Logic.new
-  array = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+array = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 puts 'choose the player (1 is x) or (2 is o)'
-  sign = gets.chomp
-#   var = players(sign, player)
-#   puts 'enter the position in the board please choose between 1 to 9'
-#   move = gets.chomp.to_i
-
-#   move_check(move, player, array, var)
-  
-#   puts "#{b.draw_board(array)}"
-#   var = 'x'
-# p player.flip_user(var)
-sign = players(sign, player)
+sign = gets.chomp
+sign = players(sign)
 i = 0
 while i < 9
   move = gets.chomp.to_i
-  move_check(move, player, array, sign)
-  puts "#{b.draw_board(array)}"
-  sign = player.flip_user(sign)
+  move_check(move, array, sign)
+  puts b.draw_board(array).to_s
+  if Player.wins(array, sign)
+    puts "player #{sign} wins \u{1F911}"
+    break
+  end
+  if i == 8
+    Player.draw
+    break
+  end
+  sign = Player.flip_user(sign)
   puts "player #{sign} make the move"
   i += 1
 end
-
