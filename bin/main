@@ -18,6 +18,3 @@ play1 = gets.chomp
 puts "choose #{player2}"
 play2 = gets.chomp
 puts "lets get started"
-put 
-
-
