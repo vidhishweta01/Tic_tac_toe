@@ -15,6 +15,17 @@ The first player to get 3 of her marks in a row (up, down, across, or diagonally
 
 When all 9 squares are full, the game is over.
 
+## How to Play locally
+To get started with Tic Tac Toe you need to follow the instructions to be able to play it on your local machine.
+
+To get a local copy up and running follow these simple example steps.
+
+Clone this repository with git clone https://github.com/vidhishweta01/Tic_tac_toe.git using your terminal or command line.
+
+Change to the project directory by entering : cd <relative path on your machine>/Tic-Tac-Toe in the terminal .
+
+run the command bin/main
+
 ## Built with
 
 ruby
