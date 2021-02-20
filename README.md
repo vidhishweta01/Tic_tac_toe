@@ -1,6 +1,6 @@
 # Tic_tac_toe
 
-![Screenshot](./img/Tic_Tac_Toe.png)
+![Screenshot](./Screenshot.png)
 
 The Tic_tac_toe project is a game built with ruby. It is a game you get to play and have fun with ease.It has the setting file where the board is. We also have the Game_Logic that contains the logic of the game as the name says. 
 
