@@ -85,3 +85,161 @@ puts '  |   | O '
 puts "Game finished, #{player1} has won"
 
 puts "Current score, #{player1}: 1, #{player2} : 0"
+
+puts 'do you want to continue?Y/N'
+player_continues = gets.chomp
+puts "player has decided chosen #{player_continues}"
+puts "Player #{player1} has chosen input #{current_player_input}, continue? Y/N"
+
+player_continues = gets.chomp
+puts "player has decided chosen #{player_continues}"
+
+puts 'O | X |   '
+puts '--------- '
+puts '  | O |   '
+puts '--------- '
+puts '  |   |   '
+
+puts "Turn of Player #{player2} \n\n"
+
+puts 'Choose were to place mark by selecting one of the number from 1-9, as shown below:'
+puts '1 | 2 | 3 '
+puts '--------- '
+puts '4 | 5 | 6 '
+puts '--------- '
+puts '7 | 8 | 9 '
+
+current_player_input = gets.chomp
+
+puts "Player #{player2} has chosen input #{current_player_input}, continue? Y/N"
+
+player_continues = gets.chomp
+puts "player has decided chosen #{player_continues}"
+
+puts 'O | X | X '
+puts '--------- '
+puts '  | O |   '
+puts '--------- '
+puts '  |   |   '
+
+puts "Turn of Player #{player1} \n\n"
+
+puts 'Choose were to place mark by selecting one of the number from 1-9, as shown below:'
+puts '1 | 2 | 3 '
+puts '--------- '
+puts '4 | 5 | 6 '
+puts '--------- '
+puts '7 | 8 | 9 '
+
+current_player_input = gets.chomp
+
+puts "Player #{player2} has chosen input #{current_player_input}, continue? Y/N"
+
+player_continues = gets.chomp
+puts "player has decided chosen #{player_continues}"
+
+puts 'O | X | X '
+puts '--------- '
+puts '  | O |   '
+puts '--------- '
+puts '  |   | X '
+puts "Turn of Player #{player1} \n\n"
+
+puts 'Choose were to place mark by selecting one of the number from 1-9, as shown below:'
+puts '1 | 2 | 3 '
+puts '--------- '
+puts '4 | 5 | 6 '
+puts '--------- '
+puts '7 | 8 | 9 '
+
+current_player_input = gets.chomp
+
+puts "Player #{player2} has chosen input #{current_player_input}, continue? Y/N"
+
+player_continues = gets.chomp
+puts "player has decided chosen #{player_continues}"
+
+puts 'O | X | X '
+puts '--------- '
+puts '  | O | O '
+puts '--------- '
+puts '  |   | X '
+puts "Turn of Player #{player1} \n\n"
+
+puts 'Choose were to place mark by selecting one of the number from 1-9, as shown below:'
+puts '1 | 2 | 3 '
+puts '--------- '
+puts '4 | 5 | 6 '
+puts '--------- '
+puts '7 | 8 | 9 '
+
+current_player_input = gets.chomp
+
+puts "Player #{player2} has chosen input #{current_player_input}, continue? Y/N"
+
+player_continues = gets.chomp
+puts "player has decided chosen #{player_continues}"
+puts 'O | X | X '
+puts '--------- '
+puts 'x | O | O'
+puts '--------- '
+puts '  |   | X '
+puts "Turn of Player #{player1} \n\n"
+
+puts 'Choose were to place mark by selecting one of the number from 1-9, as shown below:'
+puts '1 | 2 | 3 '
+puts '--------- '
+puts '4 | 5 | 6 '
+puts '--------- '
+puts '7 | 8 | 9 '
+
+current_player_input = gets.chomp
+
+puts "Player #{player2} has chosen input #{current_player_input}, continue? Y/N"
+player_continues = gets.chomp
+puts "player has decided chosen #{player_continues}"
+puts 'O | X | X '
+puts '--------- '
+puts 'x | O | O'
+puts '--------- '
+puts 'O |   | X '
+puts "Turn of Player #{player1} \n\n"
+
+puts 'Choose were to place mark by selecting one of the number from 1-9, as shown below:'
+puts '1 | 2 | 3 '
+puts '--------- '
+puts '4 | 5 | 6 '
+puts '--------- '
+puts '7 | 8 | 9 '
+
+current_player_input = gets.chomp
+
+puts "Player #{player2} has chosen input #{current_player_input}, continue? Y/N"
+
+player_continues = gets.chomp
+puts "player has decided chosen #{player_continues}"
+puts 'O | X | X '
+puts '--------- '
+puts 'x | O | O'
+puts '--------- '
+puts 'O |   | X '
+puts "Turn of Player #{player1} \n\n"
+puts 'Choose were to place mark by selecting one of the number from 1-9, as shown below:'
+puts '1 | 2 | 3 '
+puts '--------- '
+puts '4 | 5 | 6 '
+puts '--------- '
+puts '7 | 8 | 9 '
+
+current_player_input = gets.chomp
+
+puts "Player #{player2} has chosen input #{current_player_input}, continue? Y/N"
+
+player_continues = gets.chomp
+puts "player has decided chosen #{player_continues}"
+puts 'O | X | X '
+puts '--------- '
+puts 'x | O | O'
+puts '--------- '
+puts 'O | X | X '
+puts 'Its a draw'
