@@ -1,245 +1,85 @@
 #!/usr/bin/env ruby
 
-puts "WELCOME TO TIC_TAC_TOE \n"
-puts "enter the name player 1 \n"
-player1 = gets.chomp
-puts "enter the name player 2 \n"
-player2 = gets.chomp
-puts 'score card'
-puts "#{player1} score 0"
-puts "#{player2} score 0"
-puts 'welcome to the game board'
-puts "you can choose any position from 1 - 9 \n"
-puts '1 | 2 | 3'
-puts '4 | 5 | 6'
-puts '7 | 8 | 9'
-puts "choose your sign between o x #{player1}"
-puts 'lets get started'
-puts "#{player1} and #{player2}"
-puts "Turn of Player #{player1} \n\n"
-current_player_input = gets.chomp
-puts "Player #{player1} has chosen input #{current_player_input}, continue? Y/N"
+puts 'welcome to tic toc toe game'
+def new_player
+  puts 'player one choose a symbol x or o ?'
+  user_symbol = gets.chomp
+  case user_symbol
+  when 'x'
+    fplayers = 'x'
+    splayers = 'o'
+  when 'o'
+    fplayers = 'o'
+    splayers = 'x'
+  else
+    puts 'wrong inputs try again'
+    return new_player
+  end
 
-player_continues = gets.chomp
-puts "player has decided chosen #{player_continues}"
+  puts "player one has the sign #{fplayers}"
+  puts "player two has the sign #{splayers}"
+  puts
+end
 
-puts 'invalid move selected, please enter a valid number'
+board = %w[1 2 3 4 5 6 7 8 9]
+def boardshap(board)
+  puts "#{board[0]} | #{board[1]} | #{board[2]}"
+  puts "#{board[3]} | #{board[4]} | #{board[5]}"
+  puts "#{board[6]} | #{board[7]} | #{board[8]}"
+end
 
-current_player_input = gets.chomp
+def user_move(board, player_sign)
+  move_counts = 1
+  while move_counts <= 9
+    puts 'Enter your move from 1 to 9'
+    player_turn(player_sign)
+    moveaction = get_inputs(board, player_sign)
+    board[moveaction.to_i - 1] = player_sign
+    move_counts += 1
+    boardshap(board)
+    player_sign = if player_sign == 'x'
+                    'o'
+                  else
+                    'x'
+                  end
+  end
+end
 
-puts "Player #{player1} has chosen input #{current_player_input}, continue? Y/N"
+def player_turn(player_sign)
+  if player_sign == 'o'
+    puts 'your turn second player'
+  else
+    puts 'your turn first player'
+  end
+end
 
-player_continues = gets.chomp
-puts "player has decided chosen #{player_continues}"
+def get_inputs(board, player_sign)
+  moveaction = gets.chomp.to_i
+  if moveaction <= 9 && moveaction.positive?
+    if board[moveaction - 1] == 'x' || board[moveaction - 1] == 'o'
+      puts 'already selected!!!'
+      user_move(board, player_sign)
+    end
+    moveaction
+  else
+    puts 'invaild inputs please enter number from 1 to 9!!!'
+    user_move(board, player_sign)
+  end
+end
 
-puts 'O | X |   '
-puts '--------- '
-puts '  | O |   '
-puts '--------- '
-puts '  |   |   '
+def player_won(player_one_turn)
+  puts 'Game ended!'
+  if player_one_turn
+    puts 'Player one won!'
+  else
+    puts 'Player two won!'
+  end
+end
 
-puts "Turn of Player #{player2} \n\n"
+def draw
+  puts 'Game ended!'
+  puts "It's a draw"
+end
 
-puts 'Choose were to place mark by selecting one of the number from 1-9, as shown below:'
-puts '1 | 2 | 3 '
-puts '--------- '
-puts '4 | 5 | 6 '
-puts '--------- '
-puts '7 | 8 | 9 '
-
-current_player_input = gets.chomp
-
-puts "Player #{player2} has chosen input #{current_player_input}, continue? Y/N"
-
-player_continues = gets.chomp
-puts "player has decided chosen #{player_continues}"
-
-puts 'O | X | X '
-puts '--------- '
-puts '  | O |   '
-puts '--------- '
-puts '  |   |   '
-
-puts "Turn of Player #{player1} \n\n"
-
-puts 'Choose were to place mark by selecting one of the number from 1-9, as shown below:'
-puts '1 | 2 | 3 '
-puts '--------- '
-puts '4 | 5 | 6 '
-puts '--------- '
-puts '7 | 8 | 9 '
-
-current_player_input = gets.chomp
-
-puts "Player #{player2} has chosen input #{current_player_input}, continue? Y/N"
-
-player_continues = gets.chomp
-puts "player has decided chosen #{player_continues}"
-
-puts 'O | X | X '
-puts '--------- '
-puts '  | O |   '
-puts '--------- '
-puts '  |   | O '
-
-puts "Game finished, #{player1} has won"
-
-puts "Current score, #{player1}: 1, #{player2} : 0"
-
-puts 'do you want to continue?Y/N'
-player_continues = gets.chomp
-puts "player has decided chosen #{player_continues}"
-puts "Player #{player1} has chosen input #{current_player_input}, continue? Y/N"
-
-player_continues = gets.chomp
-puts "player has decided chosen #{player_continues}"
-
-puts 'O | X |   '
-puts '--------- '
-puts '  | O |   '
-puts '--------- '
-puts '  |   |   '
-
-puts "Turn of Player #{player2} \n\n"
-
-puts 'Choose were to place mark by selecting one of the number from 1-9, as shown below:'
-puts '1 | 2 | 3 '
-puts '--------- '
-puts '4 | 5 | 6 '
-puts '--------- '
-puts '7 | 8 | 9 '
-
-current_player_input = gets.chomp
-
-puts "Player #{player2} has chosen input #{current_player_input}, continue? Y/N"
-
-player_continues = gets.chomp
-puts "player has decided chosen #{player_continues}"
-
-puts 'O | X | X '
-puts '--------- '
-puts '  | O |   '
-puts '--------- '
-puts '  |   |   '
-
-puts "Turn of Player #{player1} \n\n"
-
-puts 'Choose were to place mark by selecting one of the number from 1-9, as shown below:'
-puts '1 | 2 | 3 '
-puts '--------- '
-puts '4 | 5 | 6 '
-puts '--------- '
-puts '7 | 8 | 9 '
-
-current_player_input = gets.chomp
-
-puts "Player #{player2} has chosen input #{current_player_input}, continue? Y/N"
-
-player_continues = gets.chomp
-puts "player has decided chosen #{player_continues}"
-
-puts 'O | X | X '
-puts '--------- '
-puts '  | O |   '
-puts '--------- '
-puts '  |   | X '
-puts "Turn of Player #{player1} \n\n"
-
-puts 'Choose were to place mark by selecting one of the number from 1-9, as shown below:'
-puts '1 | 2 | 3 '
-puts '--------- '
-puts '4 | 5 | 6 '
-puts '--------- '
-puts '7 | 8 | 9 '
-
-current_player_input = gets.chomp
-
-puts "Player #{player2} has chosen input #{current_player_input}, continue? Y/N"
-
-player_continues = gets.chomp
-puts "player has decided chosen #{player_continues}"
-
-puts 'O | X | X '
-puts '--------- '
-puts '  | O | O '
-puts '--------- '
-puts '  |   | X '
-puts "Turn of Player #{player1} \n\n"
-
-puts 'Choose were to place mark by selecting one of the number from 1-9, as shown below:'
-puts '1 | 2 | 3 '
-puts '--------- '
-puts '4 | 5 | 6 '
-puts '--------- '
-puts '7 | 8 | 9 '
-
-current_player_input = gets.chomp
-
-puts "Player #{player2} has chosen input #{current_player_input}, continue? Y/N"
-
-player_continues = gets.chomp
-puts "player has decided chosen #{player_continues}"
-puts 'O | X | X '
-puts '--------- '
-puts 'x | O | O'
-puts '--------- '
-puts '  |   | X '
-puts "Turn of Player #{player1} \n\n"
-
-puts 'Choose were to place mark by selecting one of the number from 1-9, as shown below:'
-puts '1 | 2 | 3 '
-puts '--------- '
-puts '4 | 5 | 6 '
-puts '--------- '
-puts '7 | 8 | 9 '
-
-current_player_input = gets.chomp
-
-puts "Player #{player2} has chosen input #{current_player_input}, continue? Y/N"
-player_continues = gets.chomp
-puts "player has decided chosen #{player_continues}"
-puts 'O | X | X '
-puts '--------- '
-puts 'x | O | O'
-puts '--------- '
-puts 'O |   | X '
-puts "Turn of Player #{player1} \n\n"
-
-puts 'Choose were to place mark by selecting one of the number from 1-9, as shown below:'
-puts '1 | 2 | 3 '
-puts '--------- '
-puts '4 | 5 | 6 '
-puts '--------- '
-puts '7 | 8 | 9 '
-
-current_player_input = gets.chomp
-
-puts "Player #{player2} has chosen input #{current_player_input}, continue? Y/N"
-
-player_continues = gets.chomp
-puts "player has decided chosen #{player_continues}"
-puts 'O | X | X '
-puts '--------- '
-puts 'x | O | O'
-puts '--------- '
-puts 'O |   | X '
-puts "Turn of Player #{player1} \n\n"
-puts 'Choose were to place mark by selecting one of the number from 1-9, as shown below:'
-puts '1 | 2 | 3 '
-puts '--------- '
-puts '4 | 5 | 6 '
-puts '--------- '
-puts '7 | 8 | 9 '
-
-current_player_input = gets.chomp
-
-puts "Player #{player2} has chosen input #{current_player_input}, continue? Y/N"
-
-player_continues = gets.chomp
-puts "player has decided chosen #{player_continues}"
-puts 'O | X | X '
-puts '--------- '
-puts 'x | O | O'
-puts '--------- '
-puts 'O | X | X '
-puts 'Its a draw'
+new_player
+user_move(board, 'x')
