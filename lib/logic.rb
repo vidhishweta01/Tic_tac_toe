@@ -2,13 +2,6 @@
 module Player
   @player1 = 'x'
   @player2 = 'o'
-  def player_sign(sign)
-    if sign == 'x'
-      @player1
-    else
-      @player2
-    end
-  end
 
   def sign_validate(sign)
     if [@player1, @player2].include?(sign)
