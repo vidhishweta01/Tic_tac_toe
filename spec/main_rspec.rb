@@ -30,7 +30,7 @@ end
 describe 'Settings.draw_board' do
   it 'return the string in order to print the board' do
     expect(Settings.draw_board([1, 2, 3, 4, 5, 6, 7, 8,
-                                9])).to eql("\n\n\n   |   |   \n 1 | 2 | 3 \n   |   |   \n---+---+---\n   |   |   \n 4 | 5 | 6 \n   |   |   \n --+---+-- \n   |   |   \n 7 | 8 | 9 \n   |   |   \n\n\n")
+                                9])).to eql("\n\n\n   |   |   \n 1 | 2 | 3 \n   |   |   \n---+---+---\n   |   |   \n 4 | 5 | 6 \n   |   |   \n --+---+-- \n   |   |   \n 7 | 8 | 9 \n   |   |   \n\n\n") # rubocop:disable Layout/LineLength
   end
 end
 
