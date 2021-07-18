@@ -1,9 +1,4 @@
 # Tic_tac_toe
-
-![Screenshot](./Screenshot.gif)
-
-![Screenshot](./Screenshot.png)
-
 The Tic_tac_toe project is a game built with ruby. It is a game you get to play and have fun with ease.It has the setting file where the board is. We also have the Game_Logic that contains the logic of the game as the name says.
 
 ## Game Instruction
@@ -14,6 +9,10 @@ You are X, your friend is O. Players take turns putting their marks in empty squ
 The first player to get 3 of her marks in a row (up, down, across, or diagonally) is the winner.
 
 When all 9 squares are full, the game is over.
+
+![Screenshot](./Screenshot.gif)
+
+![Screenshot](./Screenshot.png)
 
 ## How to Play locally
 To get started with Tic Tac Toe you need to follow the instructions to be able to play it on your local machine.
